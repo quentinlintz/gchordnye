@@ -4,7 +4,7 @@
 
 Every New Year's Eve, at local midnight, musicians all over the world take their instrument, face west, and play a G to support human-made music. This site is a homepage and countdown for that event.
 
-This repo was built from the minimal Astro template and coded by a human.
+This repo was built from the minimal Astro template and coded by humans.
 
 Check the site [here](https://gchordnye.com)!
 
