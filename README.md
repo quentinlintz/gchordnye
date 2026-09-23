@@ -10,10 +10,12 @@ Check the site [here](https://gchordnye.com)!
 
 ## Setup
 
+Node 24 is the dev and CI version, see `.nvmrc`.
+
 Install dependencies
 
 ```
-npm i
+npm ci
 ```
 
 Start the dev server
@@ -27,6 +29,12 @@ Check/fix formatting
 ```
 npm run format
 npm run format:check
+```
+
+Run Astro's typecheck
+
+```
+npm run typecheck
 ```
 
 Create a production build
