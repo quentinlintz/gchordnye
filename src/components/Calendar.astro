@@ -9,7 +9,10 @@
 
 <script>
   const convertToBasicIso = (time: string): string => {
-    return time.replaceAll(".000", "").replaceAll("-", "").replaceAll(":", "");
+    return time
+      .replace(/\.\d{3}/, "")
+      .replaceAll("-", "")
+      .replaceAll(":", "");
   };
 
   const calendarLink = document.getElementById("calendar") as HTMLAnchorElement;
