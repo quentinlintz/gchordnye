@@ -105,6 +105,34 @@ h2 {
   text-transform: uppercase;
 }
 
+#calendar {
+  display: inline-flex;
+  align-items: center;
+  color: var(--pico-primary);
+  border: 2px solid var(--pico-primary);
+  text-decoration: none;
+  background-color: transparent;
+  min-height: 44px;
+  padding: 10px 16px;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+#calendar:hover {
+  background-color: var(--pico-primary);
+  color: var(--pico-primary-inverse);
+  text-decoration: none;
+}
+
+#calendar:focus-visible {
+  outline: 2px solid var(--pico-primary);
+  outline-offset: 3px;
+}
+
+#calendar:not([href]) {
+  display: none;
+}
+
 #countdown {
   font-family: var(--pico-font-family-monospace);
   font-size: clamp(1.45rem, 6vw, 2rem);

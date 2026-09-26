@@ -1,0 +1,43 @@
+<a id="calendar"></a>
+
+<noscript>
+  <p>
+    Set a reminder for 11:45 PM December 31, 2026, in your local time. We play
+    at 12:00 AM January 1, 2027!
+  </p>
+</noscript>
+
+<script>
+  const convertToBasicIso = (time: string): string => {
+    return time
+      .replace(/\.\d{3}/, "")
+      .replaceAll("-", "")
+      .replaceAll(":", "");
+  };
+
+  const calendarLink = document.getElementById("calendar") as HTMLAnchorElement;
+  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const startTime = new Date(2027, 0, 1);
+  const endTime = new Date(startTime.getTime() + 15 * 60 * 1000);
+  const text = "G Chord NYE";
+  const details =
+    "Grab your instrument, face west, and play a G! Join our community: https://discord.gg/KN6VYYny6s";
+  const location = "Wherever you are";
+
+  const startTimeString = convertToBasicIso(startTime.toISOString());
+  const endTimeString = convertToBasicIso(endTime.toISOString());
+
+  const url = new URL("https://calendar.google.com/calendar/r/eventedit");
+  url.searchParams.append("action", "TEMPLATE");
+  url.searchParams.append("dates", `${startTimeString}/${endTimeString}`);
+  url.searchParams.append("stz", userTimeZone);
+  url.searchParams.append("etz", userTimeZone);
+  url.searchParams.append("details", details);
+  url.searchParams.append("location", location);
+  url.searchParams.append("text", text);
+
+  if (calendarLink) {
+    calendarLink.textContent = "Add to Google Calendar";
+    calendarLink.href = url.href;
+  }
+</script>
