@@ -6,7 +6,9 @@ import { performances } from "../data/performances";
   performances.length > 0 && (
     <section>
       <h2>Past performances</h2>
-      <button id="show-instagram">Show Instagram</button>
+      <button hidden id="show-instagram">
+        Show Instagram
+      </button>
       <ul role="list" id="performance-list">
         {performances.map((performance) => (
           <li>
@@ -136,6 +138,7 @@ import { performances } from "../data/performances";
   ) as HTMLParagraphElement;
 
   if (showInstagramButton && instagramReels.length != 0 && errorMessage) {
+    showInstagramButton.hidden = false;
     showInstagramButton.addEventListener("click", () => {
       errorMessage.hidden = true;
       showInstagramButton.disabled = true;
